@@ -1,0 +1,114 @@
+@import "tailwindcss";
+
+/*
+  Boris' Theme
+*/
+@theme {
+  /* Fonts */
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+
+  --color-primary: var(--text-primary);
+  --color-secondary: var(--text-secondary);
+  --color-tertiary: var(--text-tertiary);
+
+  --color-accent: var(--accent);
+  --color-border: var(--border);
+  --color-surface: var(--surface);
+}
+
+@layer base {
+  :root {
+    --background: hsl(40 20% 98);
+    --foreground: hsl(24 10% 10%);
+
+    --text-primary: hsl(24 10% 10%);
+    --text-secondary: hsl(30 6% 45%);
+    --text-tertiary: hsl(30 5% 64%);
+
+    --accent: hsl(28 80% 36%);
+    --border: hsl(30 6% 90%);
+    --surface: hsl(40 10% 96%);
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings:
+      "liga" 1,
+      "calt" 1,
+      "kern" 1;
+  }
+}
+
+/* Typography */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  letter-spacing: -0.02em;
+  font-weight: 500;
+}
+
+/* Links */
+.prose-link {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  text-decoration-color: var(--text-tertiary);
+  transition: text-decoration-color 0.15s ease;
+}
+
+.prose-link:hover {
+  text-decoration-color: var(--text-primary);
+}
+
+/* Subtle divider */
+.divider {
+  height: 1px;
+  background: var(--border);
+}
+
+/* Selection */
+::selection {
+  /* TODO: hsl -> hsla color palette */
+  background: hsla(28, 80%, 36%, 0.15);
+  color: var(--foreground);
+}
+
+/* Focus */
+:focus-visible {
+  outline: 1.5px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* Scrollbar - keep it minimal */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-tertiary);
+}
