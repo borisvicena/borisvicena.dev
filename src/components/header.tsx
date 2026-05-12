@@ -1,9 +1,9 @@
-import { ThemeToggle } from "./theme-toggle";
+import { ThemeToggle } from './theme-toggle'
 
 export function Header() {
-    return (
-        <div className="flex justify-end m-4 p-4">
-            <ThemeToggle />
-        </div>
-    )
+  return (
+    <div className="flex justify-end m-4 p-4">
+      <ThemeToggle />
+    </div>
+  )
 }

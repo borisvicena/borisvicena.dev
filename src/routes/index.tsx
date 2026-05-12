@@ -1,36 +1,33 @@
-import { motion } from "motion/react"
+import { motion } from 'motion/react'
 import { createFileRoute } from '@tanstack/react-router'
-import { JobTitle } from "#/components/job-title"
+import { JobTitle } from '#/components/job-title'
 
 export const Route = createFileRoute('/')({ component: Home })
 
 function Home() {
   return (
     <div className="p-8 w-full h-full flex justify-center">
-
       <div className="flex flex-col max-w-lg">
-
         <div className="mb-8">
           <motion.h1
             className="font-medium text-base text-balance"
             initial={{
               opacity: 0,
-              filter: "blur(10px)",
-              y: 10
+              filter: 'blur(10px)',
+              y: 10,
             }}
             animate={{
               opacity: 1,
-              filter: "none",
-              y: 0
+              filter: 'none',
+              y: 0,
             }}
             transition={{
-              ease: "easeIn",
-              duration: 0.32
+              ease: 'easeIn',
+              duration: 0.32,
             }}
           >
             Boris Vicena
           </motion.h1>
-
 
           <JobTitle />
         </div>
@@ -39,21 +36,22 @@ function Home() {
           className="text-base text-muted-foreground text-pretty"
           initial={{
             opacity: 0,
-            filter: "blur(10px)",
-            y: 10
+            filter: 'blur(10px)',
+            y: 10,
           }}
           animate={{
             opacity: 1,
-            filter: "none",
-            y: 0
-
+            filter: 'none',
+            y: 0,
           }}
           transition={{
-            ease: "easeIn",
-            duration: 0.48
+            ease: 'easeIn',
+            duration: 0.48,
           }}
         >
-          I’m a developer building intentional websites and applications with precision, clarity, and attention to detail. Currently at Lenovo, previously founder of GoSocial.
+          I’m a developer building intentional websites and applications with
+          precision, clarity, and attention to detail. Currently at Lenovo,
+          previously founder of GoSocial.
         </motion.p>
 
         <div className="flex gap-4 mt-4">
@@ -64,18 +62,17 @@ function Home() {
             rel="noreferrer"
             initial={{
               opacity: 0,
-              filter: "blur(10px)",
+              filter: 'blur(10px)',
               y: 10,
-
             }}
             animate={{
               opacity: 1,
-              filter: "none",
+              filter: 'none',
               y: 0,
             }}
             transition={{
-              ease: "easeIn",
-              duration: 0.64
+              ease: 'easeIn',
+              duration: 0.64,
             }}
           >
             gh
@@ -88,17 +85,17 @@ function Home() {
             rel="noreferrer"
             initial={{
               opacity: 0,
-              filter: "blur(10px)",
+              filter: 'blur(10px)',
               y: 10,
             }}
             animate={{
               opacity: 1,
-              filter: "none",
+              filter: 'none',
               y: 0,
             }}
             transition={{
-              ease: "easeIn",
-              duration: 0.72
+              ease: 'easeIn',
+              duration: 0.72,
             }}
           >
             tiktok
@@ -111,17 +108,17 @@ function Home() {
             rel="noreferrer"
             initial={{
               opacity: 0,
-              filter: "blur(10px)",
+              filter: 'blur(10px)',
               y: 10,
             }}
             animate={{
               opacity: 1,
-              filter: "none",
-              y: 0
+              filter: 'none',
+              y: 0,
             }}
             transition={{
-              ease: "easeIn",
-              duration: 0.8
+              ease: 'easeIn',
+              duration: 0.8,
             }}
           >
             x
@@ -134,17 +131,17 @@ function Home() {
             rel="noreferrer"
             initial={{
               opacity: 0,
-              filter: "blur(10px)",
+              filter: 'blur(10px)',
               y: 10,
             }}
             animate={{
               opacity: 1,
-              filter: "none",
-              y: 0
+              filter: 'none',
+              y: 0,
             }}
             transition={{
-              ease: "easeIn",
-              duration: 0.88
+              ease: 'easeIn',
+              duration: 0.88,
             }}
           >
             linkedin
