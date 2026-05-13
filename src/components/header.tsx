@@ -2,8 +2,8 @@ import { ThemeToggle } from './theme-toggle'
 
 export function Header() {
   return (
-    <div className="flex justify-end m-4 p-4">
+    <header className="absolute right-0 top-0 flex justify-end p-8">
       <ThemeToggle />
-    </div>
+    </header>
   )
 }

@@ -26,6 +26,10 @@ export const Route = createRootRoute({
         rel: 'stylesheet',
         href: appCss,
       },
+      {
+        rel: 'icon',
+        href: '/favicon.svg',
+      },
     ],
   }),
   loader: () => getThemeServerFn(),
@@ -39,7 +43,7 @@ function RootDocument({ children }: { children: React.ReactNode }) {
       <head>
         <HeadContent />
       </head>
-      <body>
+      <body className="min-h-screen bg-background text-foreground antialiased">
         <ThemeProvider theme={theme}>
           <Header />
           {children}

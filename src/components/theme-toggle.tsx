@@ -14,47 +14,53 @@ export function ThemeToggle() {
   }
 
   return (
-    <Button
-      size="icon"
-      variant="secondary"
-      onClick={toggleTheme}
-      aria-label={`Switch to ${isDark ? 'light' : 'dark'} mode`}
-      className="relative overflow-hidden rounded-full text-muted-foreground hover:text-primary cursor-pointer"
+    <motion.div
+      whileTap={{
+        scale: 0.95,
+      }}
     >
-      <AnimatePresence mode="wait" initial={false}>
-        <motion.div
-          key={isDark ? 'moon' : 'sun'}
-          initial={{
-            opacity: 0,
-            scale: 0.6,
-            rotate: isDark ? -90 : 90,
-            y: 4,
-            filter: 'blur(4px)',
-          }}
-          animate={{
-            opacity: 1,
-            scale: 1,
-            rotate: 0,
-            y: 0,
-            filter: 'blur(0px)',
-          }}
-          exit={{
-            opacity: 0,
-            scale: 0.6,
-            rotate: isDark ? 90 : -90,
-            y: -4,
-            filter: 'blur(4px)',
-          }}
-          transition={{
-            type: 'spring',
-            stiffness: 300,
-            damping: 22,
-          }}
-          className="flex items-center justify-center"
-        >
-          {isDark ? <Sun /> : <Moon />}
-        </motion.div>
-      </AnimatePresence>
-    </Button>
+      <Button
+        type="button"
+        size="icon"
+        variant="custom"
+        onClick={toggleTheme}
+        aria-label={`Switch to ${isDark ? 'light' : 'dark'} mode`}
+        className="relative overflow-hidden"
+      >
+        <AnimatePresence mode="wait" initial={false}>
+          <motion.span
+            key={isDark ? 'sun' : 'moon'}
+            initial={{
+              opacity: 0,
+              scale: 0.75,
+              rotate: isDark ? -45 : 45,
+              y: 4,
+              filter: 'blur(4px)',
+            }}
+            animate={{
+              opacity: 1,
+              scale: 1,
+              rotate: 0,
+              y: 0,
+              filter: 'blur(0px)',
+            }}
+            exit={{
+              opacity: 0,
+              scale: 0.75,
+              rotate: isDark ? 45 : -45,
+              y: -4,
+              filter: 'blur(4px)',
+            }}
+            transition={{
+              duration: 0.22,
+              ease: [0.22, 1, 0.36, 1],
+            }}
+            className="pointer-events-none flex items-center justify-center"
+          >
+            {isDark ? <Sun className="size-4" /> : <Moon className="size-4" />}
+          </motion.span>
+        </AnimatePresence>
+      </Button>
+    </motion.div>
   )
 }
